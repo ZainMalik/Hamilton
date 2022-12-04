@@ -20,12 +20,13 @@ class ConvertFragment : Fragment(){
     private var amount: String = ""
     private var conversion: Double = 0.0
     private val decimalFormat: DecimalFormat = DecimalFormat("0.00")
+    private lateinit var timer: CountDownTimer
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        object : CountDownTimer(30000, 1000) {
+        timer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 binding!!.tvTimer.text = ((millisUntilFinished / 1000).toString() + " sec left")
             }
@@ -58,6 +59,16 @@ class ConvertFragment : Fragment(){
                 Navigation.findNavController(view)
                     .navigate(R.id.action_convert_fragment_to_approve_fragment, bundle)
             }
+
+            timer.cancel()
+        }
+
+        binding!!.ivBack.setOnClickListener { view ->
+            if(findNavController().currentDestination?.id == R.id.convert_fragment) {
+                Navigation.findNavController(view)
+                    .navigateUp()
+            }
+            timer.cancel()
         }
 
     }

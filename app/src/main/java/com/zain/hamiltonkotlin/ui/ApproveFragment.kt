@@ -24,11 +24,12 @@ class ApproveFragment : Fragment(){
     private var outputCurrency: String = ""
     private var inputCurrencyForRate: String = ""
     private var outputCurrencyForRate: String = ""
+    private lateinit var timer: CountDownTimer
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        object : CountDownTimer(30000, 1000) {
+        timer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 binding!!.tvTimer.text = ((millisUntilFinished / 1000).toString() + " sec left")
             }
@@ -46,6 +47,15 @@ class ApproveFragment : Fragment(){
                 Navigation.findNavController(view)
                     .navigate(R.id.action_approve_fragment_to_main_fragment)
             }
+            timer.cancel()
+        }
+
+        binding!!.ivBack.setOnClickListener { view ->
+            if(findNavController().currentDestination?.id == R.id.approve_fragment) {
+                Navigation.findNavController(view)
+                    .navigateUp()
+            }
+            timer.cancel()
         }
 
         binding!!.tvApprove.setOnClickListener { view ->
@@ -58,6 +68,7 @@ class ApproveFragment : Fragment(){
                 Navigation.findNavController(view)
                     .navigate(R.id.action_approve_fragment_to_success_fragment, bundle)
             }
+            timer.cancel()
         }
 
         binding!!.tvText.text = "You are about to get " + outputCurrency + " for " + inputCurrency + ". Do you approve this transaction?"

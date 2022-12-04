@@ -66,13 +66,38 @@ class MainFragment : Fragment(){
         }
 
         binding!!.tvCalculate.setOnClickListener { view ->
-            val bundle = Bundle()
-            bundle.putString("input", inputCurrency)
-            bundle.putString("output", outputCurrency)
-            bundle.putString("amount", binding!!.etAmount.text.toString())
-            if(findNavController().currentDestination?.id == R.id.main_fragment) {
-                Navigation.findNavController(view)
-                    .navigate(R.id.action_main_fragment_to_convert, bundle)
+
+            if(!inputCurrency.isEmpty()) {
+                if (!outputCurrency.isEmpty()) {
+                    if (!(binding!!.etAmount.text.toString().isEmpty())) {
+                        val bundle = Bundle()
+                        bundle.putString("input", inputCurrency)
+                        bundle.putString("output", outputCurrency)
+                        bundle.putString("amount", binding!!.etAmount.text.toString())
+                        if (findNavController().currentDestination?.id == R.id.main_fragment) {
+                            Navigation.findNavController(view)
+                                .navigate(R.id.action_main_fragment_to_convert, bundle)
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), "Please enter amount", Toast.LENGTH_SHORT)
+                            .show()
+
+                    }
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Please choose right currency",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Please choose left currency",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
             }
         }
 
