@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.zain.hamiltonkotlin.ui.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_main_fragment_to_bottom_sheet_currency_rates"
+            app:destination="@id/bottom_sheet_currency_rates" />
+
+        <action
+            android:id="@+id/action_main_fragment_to_convert"
+            app:destination="@id/convert_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/convert_fragment"
+        android:name="com.zain.hamiltonkotlin.ui.ConvertFragment"
+        android:label="convert_fragment"
+        tools:layout="@layout/fragment_convert" >
+
+        <action
+            android:id="@+id/action_convert_fragment_to_approve_fragment"
+            app:destination="@id/approve_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/approve_fragment"
+        android:name="com.zain.hamiltonkotlin.ui.ApproveFragment"
+        android:label="approve_fragment"
+        tools:layout="@layout/fragment_approve" >
+
+        <action
+            android:id="@+id/action_approve_fragment_to_main_fragment"
+            app:destination="@id/main_fragment" />
+
+        <action
+            android:id="@+id/action_approve_fragment_to_success_fragment"
+            app:destination="@id/success_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/success_fragment"
+        android:name="com.zain.hamiltonkotlin.ui.SuccessFragment"
+        android:label="success_fragment"
+        tools:layout="@layout/fragment_success" >
+
+        <action
+            android:id="@+id/action_success_fragment_to_main_fragment"
+            app:destination="@id/main_fragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/bottom_sheet_currency_rates"
+        android:name="com.zain.hamiltonkotlin.ui.CurrencyRatesBottomSheet"
+        android:label="bottom_sheet_currency_rates"
+        tools:layout="@layout/bottom_sheet_currency_rates">
+
+    </dialog>
+
+</navigation>

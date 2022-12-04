@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vmMain"
+            type="com.zain.hamiltonkotlin.vm.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.zain.hamiltonkotlin.ui.MainFragment"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="100dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_input_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_white_bg_no_round"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_input_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="USD"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_input_currency"
+                    android:layout_toEndOf="@+id/tv_input_currency"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_down_arrow"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_exchange"
+                android:layout_width="24dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_exchange_arrows"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_output_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_white_bg_no_round"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_output_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="USD"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_output_currency"
+                    android:layout_toEndOf="@+id/tv_output_currency"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_down_arrow"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount:"
+                android:textSize="20dp"
+                android:textColor="#FF7F7F"/>
+
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="28dp"
+                android:textColor="#FF808080"
+                android:textStyle="bold"
+                android:backgroundTint="#FF808080"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp">
+
+            <TextView
+                android:id="@+id/tv_calculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:background="#FF7F7F"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>
