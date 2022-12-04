@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.zain.hamiltonkotlin.*
 import com.zain.hamiltonkotlin.databinding.BottomSheetCurrencyRatesBinding
+import com.zain.hamiltonkotlin.model.ConversionRates
 import com.zain.hamiltonkotlin.vm.MainViewModel
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch

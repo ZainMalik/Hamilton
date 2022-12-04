@@ -1,8 +1,8 @@
-package com.zain.hamiltonkotlin
+package com.zain.hamiltonkotlin.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
+import com.zain.hamiltonkotlin.model.ConversionRates
 
 data class CurrencyRatesResponse(
     @SerializedName("result")

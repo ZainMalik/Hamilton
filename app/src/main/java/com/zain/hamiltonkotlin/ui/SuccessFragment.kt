@@ -21,7 +21,6 @@ import java.util.*
 class SuccessFragment : Fragment(){
 
     private var binding: FragmentSuccessBinding? = null
-    private val viewModel: MainViewModel by activityViewModels()
     private var inputCurrency: String = ""
     private var outputCurrency: String = ""
     private var inputCurrencyForRate: String = ""

@@ -1,4 +1,4 @@
-package com.zain.hamiltonkotlin
+package com.zain.hamiltonkotlin.model
 
 import com.google.gson.Gson
 import com.google.gson.annotations.Expose

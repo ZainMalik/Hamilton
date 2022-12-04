@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.core.os.trace
 import androidx.recyclerview.widget.RecyclerView
 import com.zain.hamiltonkotlin.R
+import java.text.DecimalFormat
 import java.util.*
 
 class AdapterCurrency(private val mapCurrencyRates: SortedMap<String, Double>,val mItemClickListener: ItemClickListener) :
@@ -14,6 +15,7 @@ class AdapterCurrency(private val mapCurrencyRates: SortedMap<String, Double>,va
 
     val arrayListNames = arrayListOf<String>()
     val arrayListValues = arrayListOf<Double>()
+    private val decimalFormat: DecimalFormat = DecimalFormat("0.00")
 
     interface ItemClickListener{
         fun onItemClick(position: Int, key: String, value: Double)
@@ -37,7 +39,7 @@ class AdapterCurrency(private val mapCurrencyRates: SortedMap<String, Double>,va
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.tvCurrencyName.text = arrayListNames.get(position)
-        holder.tvCurrencyValue.text = arrayListValues.get(position).toString()
+        holder.tvCurrencyValue.text = decimalFormat.format(arrayListValues.get(position)).toString()
 
     }
 

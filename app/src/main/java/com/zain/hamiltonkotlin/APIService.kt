@@ -1,5 +1,6 @@
 package com.zain.hamiltonkotlin
 
+import com.zain.hamiltonkotlin.model.CurrencyRatesResponse
 import retrofit2.http.GET
 
 interface APIService {

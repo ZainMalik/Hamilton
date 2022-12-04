@@ -102,6 +102,7 @@
                 android:textSize="28dp"
                 android:textColor="#FF808080"
                 android:textStyle="bold"
+                android:inputType="number"
                 android:backgroundTint="#FF808080"
                 android:textAlignment="center"/>
 
